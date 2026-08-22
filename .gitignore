@@ -1,0 +1,21 @@
+# Build outputs
+build/
+build_*/
+
+# ESP-IDF component manager cache (regenerado a partir de idf_component.yml)
+managed_components/
+
+# sdkconfig backups gerados pela ferramenta
+sdkconfig.old
+
+# Metadados do workspace do Eclipse/Espressif-IDE (não são de um projeto especifico)
+.metadata/
+
+# Configuracoes de projeto do Eclipse especificas de maquina
+**/.settings/
+
+# macOS
+.DS_Store
+
+# Contexto pessoal do Claude Code (nao publicar no GitHub)
+CLAUDE.md
