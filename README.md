@@ -30,6 +30,7 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 | Projeto | Descrição | Link |
 | --- | --- | --- |
 | `start` | Hello World — validação inicial do ambiente | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/start) |
+| `hello_world` | Hello World — teste do ambiente CLI/VS Code | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/hello_world) |
 | `blink` | LED onboard (GPIO2) via `driver/gpio` | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/blink) |
 | `pwm_software` | Trabalho 01 — PWM em software, duty-cycle via terminal serial | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/pwm_software) |
 
