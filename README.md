@@ -1,87 +1,62 @@
 # Workspace ESP32
 
-Data: 2026-08-20
+- **Autor:** Ronen Rodrigues Silva Filho
+- **Instituição:** Universidade de Brasília (UnB) — Pós-graduação, PPMEC
+- **Disciplina:** PPMEC0166 - Tópicos Avançados em Sistemas Mecatrônicos 3 (Princípios de Internet das Coisas)
+- **Professor:** Jones Yudi Mori Alves da Silva
 
 ## Objetivo
-Centralizar projetos ESP32 usando o ambiente oficial ESP-IDF no macOS.
 
-## O que ja foi realizado
+Workspace para os projetos ESP32 da disciplina, usando o ambiente oficial
+ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 
-### 1. Homebrew instalado
-- Homebrew instalado com sucesso
-- Comando `brew` validado
+## Ambiente
 
-### 2. Dependencias principais instaladas via Homebrew
-- cmake
-- ninja
-- dfu-util
-- ccache
-- pkg-config
+- Placa: ESP32-WROOM-32 DevKitC (30 pinos, USB-serial CP2102), porta
+  `/dev/cu.usbserial-0001`
+- Target: `esp32`
+- ESP-IDF v5.5.1, duas instalações ativas no sistema:
+  - CLI/manual: `~/esp/esp-idf`, ativado via `~/.zshrc` (`IDF_PATH`)
+  - Gerenciada pela Espressif-IDE: `~/.espressif/release-v5.5/esp-idf`
 
-### 3. ESP-IDF instalado e configurado
-- ESP-IDF v5.5.1 instalado em `~/esp/esp-idf`
-- Toolchains e ferramentas do alvo `esp32` instaladas
-- `idf.py` validado com versao correta
+  Cada projeto documenta no próprio README qual instalação usa, para
+  evitar conflito de ambiente.
+- Toolchain, Python (3.12.14) e dependências (`cmake`, `ninja`,
+  `dfu-util`, `ccache`, `pkg-config`) instalados via Homebrew
+- VS Code: extensão oficial Espressif IDF instalada
 
-### 4. Ambiente de shell configurado
-- Ativacao automatica do ESP-IDF adicionada ao `~/.zshrc`
-- `IDF_PATH` ativo em `/Users/ronen/esp/esp-idf`
+## Projetos implementados
 
-### 5. Verificacao de pre-requisitos
-- Java: OpenJDK 26.0.2 (Temurin)
-- Python: 3.9.6 (CLI IDF local) e Python 3.12.14 (compatibilidade IDE)
-- Git: OK
-- ESP-IDF tools: OK
+| Projeto | Descrição | Link |
+| --- | --- | --- |
+| `start` | Hello World — validação inicial do ambiente | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/start) |
+| `blink` | LED onboard (GPIO2) via `driver/gpio` | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/blink) |
+| `pwm_software` | Trabalho 01 — PWM em software, duty-cycle via terminal serial | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/pwm_software) |
 
-### 6. VS Code
-- Extensao oficial Espressif IDF instalada
+## Comandos úteis
 
-### 7. Espressif-IDE configurada e funcional
-- Espressif-IDE instalada e `ESP-IDF Manager` configurado
-- Instalacao ativa na IDE: `release-v5.5`
-- Local ativo na IDE: `/Users/ronen/.espressif/release-v5.5/esp-idf`
-- Ajuste de Python para requisito da IDE (`>=3.10 e <3.14`)
-- `python3` global ajustado para `3.12.14`
+Em terminal novo, se `idf.py` não for reconhecido, ative o ambiente
+primeiro (normalmente já ativado via `~/.zshrc`):
 
-### 8. Correcao de dependencia da IDE
-- Erro resolvido no monitor da IDE:
-   - `RuntimeError: Please install the websocket_client package for IDE integration!`
-- Pacote instalado no venv da IDE:
-   - `/Users/ronen/.espressif/tools/python/release-v5.5/venv`
-   - `websocket-client==1.9.0`
+```
+source ~/esp/esp-idf/export.sh
+```
 
-### 9. Validacao ponta a ponta (placa real)
-- Porta serial detectada: `/dev/cu.usbserial-0001`
-- Build executado com sucesso
-- Flash executado com sucesso
-- Monitor serial executado com sucesso
-- Log recebido em loop: `Hello from app_main!`
+Depois, dentro da pasta do projeto:
 
-## Comandos uteis
-1. Definir target:
-   - `idf.py set-target esp32`
-2. Compilar:
-   - `idf.py build`
-3. Gravar e monitorar:
-   - `idf.py -p /dev/cu.usbserial-0001 flash monitor`
-4. Sair do monitor:
-   - `Ctrl + ]`
+```
+idf.py set-target esp32
+idf.py build
+idf.py -p /dev/cu.usbserial-0001 flash monitor
+```
 
-## Proximos passos sugeridos
-1. Criar base de projeto em `workspace-esp32` com estrutura modular (`main`, `components`, `config`)
-2. Trocar exemplo `hello_world` por caso real (GPIO, UART, Wi-Fi ou BLE)
-3. Versionar projeto no Git e registrar instrucoes de build/flash no README do projeto
+Sair do monitor: `Ctrl + ]`
 
-## Estrutura recomendada desta pasta
-- `workspace-esp32/hello_world`
-- `workspace-esp32/blink`
-- `workspace-esp32/projetos-experimentos`
+## Versionamento
 
-## Observacao
-Este workspace pode ser usado tanto no VS Code quanto na Espressif-IDE.
+Repositório Git, publicado em
+[github.com/ronenfilho/ppmec0166-esp32](https://github.com/ronenfilho/ppmec0166-esp32).
 
-Atencao: hoje existem duas instalacoes funcionais de ESP-IDF no sistema:
-- CLI/manual: `~/esp/esp-idf` (v5.5.1)
-- IDE gerenciada: `~/.espressif/release-v5.5/esp-idf`
-
-Para evitar confusao de ambiente no dia a dia, escolha uma como principal por projeto e documente no README de cada projeto qual foi usada.
+`build/`, `managed_components/`, metadados do Eclipse (`.metadata/` e
+`.settings/`) local não são versionados (ver
+`.gitignore`).

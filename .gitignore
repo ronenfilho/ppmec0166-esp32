@@ -19,3 +19,6 @@ sdkconfig.old
 
 # Contexto pessoal do Claude Code (nao publicar no GitHub)
 CLAUDE.md
+
+# Estado interno do Claude Code
+.claude/
