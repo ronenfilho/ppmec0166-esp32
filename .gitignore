@@ -22,3 +22,7 @@ CLAUDE.md
 
 # Estado interno do Claude Code
 .claude/
+
+# Videos brutos (nao comprimidos) - muito grandes para o GitHub;
+# versionar apenas a versao comprimida (.mp4)
+*.MOV

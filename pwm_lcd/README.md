@@ -55,6 +55,27 @@ Sintomas observados durante o desenvolvimento e o que resolveu:
   ordem invertida. Não foi necessário neste módulo (mapeamento padrão
   RS/RW/E/Backlight/D4-D7 funcionou depois dos ajustes acima).
 
+<img src="midia/IMG_9309.jpeg" width="500" alt="LCD com texto embaralhado durante o troubleshooting">
+
+*Exemplo do sintoma "texto embaralhado" descrito acima — comunicação I2C
+confirmada (scan encontrava o endereço `0x27`), mas caracteres
+incorretos por integridade de sinal.*
+
+## Resultado
+
+<img src="midia/IMG_9321.jpeg" width="500" alt="LCD funcionando, mostrando Duty-cycle 80% e a barra de nivel">
+
+*Funcionando: `Duty-cycle: 80%` legível na linha 1, barra de nível na
+linha 2. Ao fundo, o log do monitor confirma o scan I2C (`Dispositivo
+I2C encontrado no endereco 0x27`) e a leitura do duty-cycle digitado.*
+
+<img src="midia/IMG_9322.jpeg" width="500" alt="Montagem fisica: ESP32 e LCD na protoboard">
+
+*Montagem física: ESP32 e LCD (com backpack I2C) na protoboard.*
+
+Vídeo de demonstração (duty-cycle sendo alterado em tempo real, LED e
+LCD respondendo juntos): [midia/IMG_9318.mp4](midia/IMG_9318.mp4)
+
 ## Build, flash e monitor
 
 Em terminal novo, se `idf.py` não for reconhecido:
