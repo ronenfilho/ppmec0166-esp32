@@ -11,9 +11,7 @@ static const char *TAG = "lcd1602";
 #define LCD_ENABLE    0x04
 #define LCD_RS        0x01
 
-/* Alguns backpacks I2C ligam D4-D7 na ordem invertida (D7,D6,D5,D4 em vez
-   de D4,D5,D6,D7). Se o texto sair embaralhado com o valor 0 aqui, troque
-   para 1 e regrave. */
+/* Se o texto sair embaralhado com o valor 0 aqui, troque para 1 e regrave. */
 #define LCD_REVERSE_NIBBLE 0
 
 static uint8_t reverse_nibble(uint8_t n)
