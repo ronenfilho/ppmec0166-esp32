@@ -35,7 +35,7 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 | `pwm_software` | Trabalho 01 — PWM em software, duty-cycle via terminal serial | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/pwm_software) |
 | `pwm_lcd` | Extensão do Trabalho 01 — duty-cycle exibido num LCD 16x2 (I2C) | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/pwm_lcd) |
 | `connect` | Conectividade Parte 4 — micro webserver via Wi-Fi | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/connect) |
-| `connect_with_input` | Conectividade Parte 5 — LED ligado/desligado via HTTP | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/connect_with_input) |
+| `webserver_acionamento_remoto` | WebServer - Acionamento Remoto — LED ligado/desligado via HTTP | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/webserver_acionamento_remoto) |
 
 ## Comandos úteis
 

@@ -1,3 +1,0 @@
-CompileFlags:
-  CompilationDatabase: /Users/ronen/esp/workspace-esp32/connect_with_input/build
-  Remove: [-m*, -f*]

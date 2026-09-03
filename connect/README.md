@@ -50,6 +50,6 @@ Sair do monitor: `Ctrl + ]`
 
 ## Próximos passos
 
-Continuação em [connect_with_input](../connect_with_input) (Parte 5:
+Continuação em [webserver_acionamento_remoto](../webserver_acionamento_remoto) (Parte 5:
 Comandos Remotos), que reaproveita `connect.c`/`connect.h` para
 ligar/desligar um LED via requisição HTTP.
