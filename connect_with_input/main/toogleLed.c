@@ -9,11 +9,19 @@ static const char *TAG = "TOGGLE_LED";
 
 #define LED_GPIO 2 /* LED onboard desta placa (ver ../blink/README.md) */
 
+static bool s_led_on = false;
+
 void toogle_led_init(void)
 {
     gpio_reset_pin(LED_GPIO);
     gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
     gpio_set_level(LED_GPIO, 0);
+    s_led_on = false;
+}
+
+bool toogle_led_get_state(void)
+{
+    return s_led_on;
 }
 
 esp_err_t on_toggle_led(httpd_req_t *req)
@@ -54,6 +62,7 @@ esp_err_t on_toggle_led(httpd_req_t *req)
 
     bool led_on = cJSON_IsTrue(is_on);
     gpio_set_level(LED_GPIO, led_on ? 1 : 0);
+    s_led_on = led_on;
     ESP_LOGI(TAG, "LED %s via HTTP", led_on ? "ligado" : "desligado");
 
     cJSON_Delete(json);

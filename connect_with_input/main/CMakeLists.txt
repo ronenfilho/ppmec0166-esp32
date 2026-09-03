@@ -6,6 +6,7 @@ idf_component_register(
         "main.c"
         "connect.c"
         "toogleLed.c"
+        "clock.c"
 
     INCLUDE_DIRS
         "."

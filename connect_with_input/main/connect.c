@@ -306,6 +306,14 @@ esp_err_t wifi_connect_sta(const char *ssid, const char *pass, int timeout)
 
     ESP_ERROR_CHECK(esp_wifi_start());
 
+    /*
+     * Desliga o modo de economia de energia do Wi-Fi. Com power-save
+     * ligado (padrao), o ESP32 pode perder pacotes do handshake WPA2
+     * especificamente com o Hotspot Pessoal do iPhone, travando em
+     * "assoc -> run" sem nunca completar a conexao.
+     */
+    esp_wifi_set_ps(WIFI_PS_NONE);
+
     EventBits_t result =
         xEventGroupWaitBits(
             wifi_events,

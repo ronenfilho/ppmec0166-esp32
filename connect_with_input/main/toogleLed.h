@@ -1,6 +1,7 @@
 #ifndef TOOGLE_LED_H
 #define TOOGLE_LED_H
 
+#include <stdbool.h>
 #include "esp_http_server.h"
 
 #ifdef __cplusplus
@@ -9,6 +10,9 @@ extern "C" {
 
 /* Configura o GPIO do LED como saida (nivel inicial: desligado). */
 void toogle_led_init(void);
+
+/* Estado atual do LED (true = ligado). */
+bool toogle_led_get_state(void);
 
 /*
  * Handler HTTP (POST) que le do corpo da requisicao um JSON no formato
