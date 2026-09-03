@@ -28,10 +28,37 @@ E edite `main/secrets.h` com seus valores reais:
 #define WIFI_SSID     "SEU_SSID_AQUI"
 #define WIFI_PASSWORD "SUA_SENHA_AQUI"
 #define MQTT_BROKER_URI "mqtt://SEU_IP_DO_BROKER:1883"
+#define MQTT_USERNAME ""
+#define MQTT_PASSWORD ""
 ```
 
-`MQTT_BROKER_URI` pode ser o seu Mosquitto local ou o do professor —
-os dois precisam estar na mesma rede que o ESP32.
+### Opção 1: broker local (seu ou do professor)
+
+Sem autenticação, `MQTT_USERNAME`/`MQTT_PASSWORD` em branco:
+
+```c
+#define MQTT_BROKER_URI "mqtt://SEU_IP_DO_BROKER:1883"
+#define MQTT_USERNAME ""
+#define MQTT_PASSWORD ""
+```
+
+O broker e o ESP32 precisam estar na mesma rede local.
+
+### Opção 2: broker público de testes (test.mosquitto.org)
+
+Não exige estar na mesma rede — só que o ESP32 tenha acesso à internet.
+Porta autenticada (`1884`), com as credenciais fixas e documentadas do
+próprio serviço (`rw`/`readwrite` = acesso total; não é possível
+cadastrar usuário próprio nesse servidor público):
+
+```c
+#define MQTT_BROKER_URI "mqtt://test.mosquitto.org:1884"
+#define MQTT_USERNAME "rw"
+#define MQTT_PASSWORD "readwrite"
+```
+
+(Existe também a porta `1883` sem autenticação nenhuma, se preferir
+simplicidade em vez de credenciais.)
 
 ## Tópicos
 
@@ -58,8 +85,10 @@ no mesmo broker compartilhado:
 
 ## Testando
 
-Com o Mosquitto rodando (local ou do professor) e o ESP32 conectado,
-usando o `mosquitto_pub`/`mosquitto_sub` da linha de comando:
+Com o ESP32 conectado, usando `mosquitto_pub`/`mosquitto_sub` da linha
+de comando.
+
+### Broker local (sem autenticação)
 
 **Acompanhar o status:**
 
@@ -74,8 +103,28 @@ mosquitto_pub -h <IP-do-broker> -t esp32/ronen/led/set -m on
 mosquitto_pub -h <IP-do-broker> -t esp32/ronen/led/set -m off
 ```
 
-O LED deve responder na hora, e o tópico de status deve atualizar
-(visível em quem estiver com o `mosquitto_sub` aberto).
+### Broker público test.mosquitto.org (autenticado)
+
+Mesma coisa, porta `1884` e credenciais `rw`/`readwrite`:
+
+**Acompanhar o status:**
+
+```
+mosquitto_sub -h test.mosquitto.org -p 1884 -u rw -P readwrite -t esp32/ronen/led/status
+```
+
+**Ligar/desligar:**
+
+```
+mosquitto_pub -h test.mosquitto.org -p 1884 -u rw -P readwrite -t esp32/ronen/led/set -m on
+mosquitto_pub -h test.mosquitto.org -p 1884 -u rw -P readwrite -t esp32/ronen/led/set -m off
+```
+
+Validado funcionando: comando publicado da internet, LED respondeu e o
+tópico de status atualizou — sem precisar estar na mesma rede do ESP32.
+
+Em ambos os casos, o LED deve responder na hora, e o tópico de status
+deve atualizar (visível em quem estiver com o `mosquitto_sub` aberto).
 
 ### Resultado
 
