@@ -1,0 +1,3 @@
+CompileFlags:
+  CompilationDatabase: /Users/ronen/esp/workspace-esp32/webserver_relogio/build
+  Remove: [-m*, -f*]

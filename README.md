@@ -36,6 +36,8 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 | `pwm_lcd` | Extensão do Trabalho 01 — duty-cycle exibido num LCD 16x2 (I2C) | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/pwm_lcd) |
 | `connect` | Conectividade Parte 4 — micro webserver via Wi-Fi | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/connect) |
 | `webserver_acionamento_remoto` | WebServer - Acionamento Remoto — LED ligado/desligado via HTTP | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/webserver_acionamento_remoto) |
+| `mqtt-geral` | Cliente MQTT — liga/desliga LED remoto via pub/sub | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/mqtt-geral) |
+| `webserver_relogio` | Webserver - Relógio — timestamp via NTP, auto-atualização a cada 10s | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/webserver_relogio) |
 
 ## Comandos úteis
 
