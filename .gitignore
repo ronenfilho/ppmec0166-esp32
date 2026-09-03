@@ -26,3 +26,7 @@ CLAUDE.md
 # Videos brutos (nao comprimidos) - muito grandes para o GitHub;
 # versionar apenas a versao comprimida (.mp4)
 *.MOV
+
+# Credenciais (Wi-Fi, broker MQTT, etc.) - equivalente a um .env.
+# Cada projeto versiona so o "secrets.h.example" como modelo.
+**/secrets.h
