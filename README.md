@@ -13,8 +13,9 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 ## Ambiente
 
 - Placa: ESP32-WROOM-32 DevKitC (30 pinos, USB-serial CP2102), porta
-  `/dev/cu.usbserial-0001`
-- Target: `esp32`
+  `/dev/cu.usbserial-0001`, target `esp32`
+- Placa: ESP32-C3 SuperMini (RISC-V, USB nativo), porta
+  `/dev/cu.usbmodem101`, target `esp32c3`
 - ESP-IDF v5.5.1, duas instalações ativas no sistema:
   - CLI/manual: `~/esp/esp-idf`, ativado via `~/.zshrc` (`IDF_PATH`)
   - Gerenciada pela Espressif-IDE: `~/.espressif/release-v5.5/esp-idf`
@@ -38,6 +39,8 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 | `webserver_acionamento_remoto` | WebServer - Acionamento Remoto — LED ligado/desligado via HTTP | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/webserver_acionamento_remoto) |
 | `mqtt-geral` | Cliente MQTT — liga/desliga LED remoto via pub/sub | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/mqtt-geral) |
 | `webserver_relogio` | Webserver - Relógio — timestamp via NTP, auto-atualização a cada 10s | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/webserver_relogio) |
+| `mqtt-esp-pub-sub` | Teste rápido de pub/sub MQTT (heartbeat + eco) | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/mqtt-esp-pub-sub) |
+| `hello-word-ESP32-C3` | Hello World — bring-up da placa ESP32-C3 SuperMini | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/hello-word-ESP32-C3) |
 
 ## Comandos úteis
 
