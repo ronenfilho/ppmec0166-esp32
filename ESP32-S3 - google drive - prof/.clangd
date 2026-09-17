@@ -1,0 +1,4 @@
+CompileFlags:
+  CompilationDatabase: /Users/ronen/esp/workspace-esp32/ESP32-S3 - google drive -
+    prof/build
+  Remove: [-m*, -f*]
