@@ -16,6 +16,8 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
   `/dev/cu.usbserial-0001`, target `esp32`
 - Placa: ESP32-C3 SuperMini (RISC-V, USB nativo), porta
   `/dev/cu.usbmodem101`, target `esp32c3`
+- Placa: ESP32-S3-1 N16R8 (Xtensa dual-core, 44 pinos, USB nativo sem
+  auto-reset), target `esp32s3`
 - ESP-IDF v5.5.1, duas instalações ativas no sistema:
   - CLI/manual: `~/esp/esp-idf`, ativado via `~/.zshrc` (`IDF_PATH`)
   - Gerenciada pela Espressif-IDE: `~/.espressif/release-v5.5/esp-idf`
@@ -41,6 +43,7 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 | `webserver_relogio` | Webserver - Relógio — timestamp via NTP, auto-atualização a cada 10s | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/webserver_relogio) |
 | `mqtt-esp-pub-sub` | Teste rápido de pub/sub MQTT (heartbeat + eco) | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/mqtt-esp-pub-sub) |
 | `hello-word-ESP32-C3` | Hello World — bring-up da placa ESP32-C3 SuperMini | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/hello-word-ESP32-C3) |
+| `hello-word-ESP32-S3` | Hello World — bring-up da placa ESP32-S3 N16R8 | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/hello-word-ESP32-S3) |
 
 ## Comandos úteis
 
