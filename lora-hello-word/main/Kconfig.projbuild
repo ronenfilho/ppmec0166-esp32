@@ -1,0 +1,42 @@
+menu "LoRa hello world"
+    config LORA_FREQ_KHZ
+        int "frequencia (kHz)"
+        default 915000
+        help
+            915 MHz: faixa ISM usada no Brasil (placa 868/915).
+
+    config LORA_SF
+        int "spreading factor (7-12)"
+        range 7 12
+        default 7
+
+    config LORA_TX_POWER_DBM
+        int "potencia de transmissao (dBm, PA_BOOST)"
+        range 2 17
+        default 14
+
+    config LORA_INTERVALO_MS
+        int "intervalo entre envios (ms)"
+        default 5000
+        help
+            Entre envios a placa fica em recepcao. Um sorteio de ate 1 s e somado para duas placas nao
+            transmitirem sempre no mesmo instante.
+
+    # Pinagem do shield LilyGO T-Higrow LoRa (20191223) com modulo TTGO LoRa32 868/915 MHz,
+    # encaixado num ESP32 DevKit V1 (WROOM-32).
+    config LORA_PIN_SCK
+        int "SCK"
+        default 14
+    config LORA_PIN_MISO
+        int "MISO"
+        default 13
+    config LORA_PIN_MOSI
+        int "MOSI"
+        default 12
+    config LORA_PIN_CS
+        int "CS (NSS)"
+        default 15
+    config LORA_PIN_RST
+        int "RST do radio (-1 = sem reset)"
+        default 32
+endmenu
