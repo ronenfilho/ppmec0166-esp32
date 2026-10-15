@@ -1,0 +1,19 @@
+# Console interativo: essa placa usa USB Serial/JTAG nativo, nao UART
+# (sem CH340/CP2102) -- com o console default (UART) o REPL nao recebe
+# nenhuma tecla.
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
+
+# TLS: valida os certificados do Google (googleapis.com, oauth2...)
+# contra o bundle de CAs publicas do ESP-IDF.
+CONFIG_MBEDTLS_CERTIFICATE_BUNDLE=y
+CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_DEFAULT_FULL=y
+
+# Partition table proprio (ver partitions.csv) -- nvs padrao (24K) nao
+# cabe os snapshots, e factory padrao (1M) nao cabe Wi-Fi+TLS+HTTP
+# client+console+cJSON juntos.
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# Placa N16R8 (16MB de flash).
+CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y

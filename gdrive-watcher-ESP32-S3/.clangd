@@ -1,4 +1,3 @@
 CompileFlags:
-  CompilationDatabase: /Users/ronen/esp/workspace-esp32/ESP32-S3 - google drive -
-    sinc/build
+  CompilationDatabase: /Users/ronen/esp/workspace-esp32/gdrive-watcher-ESP32-S3/build
   Remove: [-m*, -f*]
