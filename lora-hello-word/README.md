@@ -47,11 +47,29 @@ O SX1276 é **half-duplex**: transmite **ou** recebe, nunca os dois ao mesmo tem
 
 ## Compilar e gravar
 
+Descobrir a porta da placa (no macOS; a LoRa32 aparece como `/dev/cu.usbserial-*`):
+
+```
+ls /dev/cu.*
+```
+
+Para ter certeza de qual porta é a placa, rode o comando com ela desconectada e depois conectada: a porta que aparecer é a dela.
+
 ```
 idf.py set-target esp32
 idf.py build
 idf.py -p /dev/cu.usbserial-XXXX flash monitor
 ```
+
+## Monitorar o log
+
+Só abrir a serial, sem gravar de novo (a placa reinicia e o log aparece desde o boot):
+
+```
+idf.py -p /dev/cu.usbserial-XXXX monitor
+```
+
+Para sair do monitor, use `Ctrl+]`.
 
 ## Resultado (15/out/2026)
 

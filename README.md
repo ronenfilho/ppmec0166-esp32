@@ -18,6 +18,8 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
   `/dev/cu.usbmodem101`, target `esp32c3`
 - Placa: ESP32-S3-1 N16R8 (Xtensa dual-core, 44 pinos, USB nativo sem
   auto-reset), target `esp32s3`
+- Shield LilyGO T-Higrow LoRa com módulo TTGO LoRa32 868/915 MHz (SX1276),
+  encaixado num ESP32 DevKit V1 (`/dev/cu.usbserial-0001`), target `esp32`
 - ESP-IDF v5.5.1, duas instalações ativas no sistema:
   - CLI/manual: `~/esp/esp-idf`, ativado via `~/.zshrc` (`IDF_PATH`)
   - Gerenciada pela Espressif-IDE: `~/.espressif/release-v5.5/esp-idf`
@@ -44,6 +46,7 @@ ESP-IDF, com suporte tanto ao Espressif-IDE quanto ao VS Code.
 | `mqtt-esp-pub-sub` | Teste rápido de pub/sub MQTT (heartbeat + eco) | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/mqtt-esp-pub-sub) |
 | `hello-word-ESP32-C3` | Hello World — bring-up da placa ESP32-C3 SuperMini | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/hello-word-ESP32-C3) |
 | `hello-word-ESP32-S3` | Hello World — bring-up da placa ESP32-S3 N16R8 | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/hello-word-ESP32-S3) |
+| `lora-hello-word` | LoRa 915 MHz (SX1276) — envio de `hello` com TxDone e recepção com RSSI/SNR, ESP32 DevKit + shield T-Higrow LoRa | [GitHub](https://github.com/ronenfilho/ppmec0166-esp32/tree/main/lora-hello-word) |
 
 ## Comandos úteis
 
